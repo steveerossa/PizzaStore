@@ -9,7 +9,12 @@ public class Pizza {
     /**Pizza constructor.
      * @param pizzaName the name of the pizza*/
     public Pizza(String pizzaName) {
+
         this.pizzaName = pizzaName;
+    }
+
+    public Pizza () {
+
     }
 
     /**Method returns Pizza ordered.

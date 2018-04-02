@@ -24,7 +24,6 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-
 public class DemoApplicationTests {
 
     // private PizzaOrderUtility pizzaOrderUtility;
@@ -77,12 +76,12 @@ public class DemoApplicationTests {
         catch(FileNotFoundException ex) {
             logger.info(
                     "Unable to open file '" +
-                            "outPut.txt" + "'");
+                            "order.txt" + "'");
         }
         catch(IOException ex) {
             logger.info(
                     "Error reading file '"
-                            + "outPut.txt" + "'");
+                            + "order.txt" + "'");
             // Or we could just do this:
             ex.printStackTrace();
         }
@@ -102,9 +101,9 @@ public class DemoApplicationTests {
                 logger.info("The X IS: " + x + " and Y is: " + y);
                 if (!orders.get(x).getOrderTime().equals(orders.get(y).getOrderTime())) {
                     assertTrue("Higher index element of list has lower date than lower index element",
-                            orders.get(x).getOrderTime().before(orders.get(y).getOrderTime()));
+                            orders.get(x).orderDate().before(orders.get(y).orderDate()));
                     assertTrue("Lower index element of list has higher date than higher index element",
-                            orders.get(y).getOrderTime().after(orders.get(x).getOrderTime()));
+                            orders.get(y).orderDate().after(orders.get(x).orderDate()));
                 }
 
             }
@@ -124,9 +123,9 @@ public class DemoApplicationTests {
         for(String order: ordersList) {
 
             AtomicReferenceArray<String> thisOrder = new AtomicReferenceArray<>(order.split("\\s{2,}")); // limitations regex and corrupted text files
-            Instant instant = Instant.ofEpochMilli(Long.valueOf(thisOrder.get(1)));
-            Date date = Date.from(instant);
-            orders.add(new Order(new Pizza(thisOrder.get(0)), date));
+//            Instant instant = Instant.ofEpochMilli(Long.valueOf(thisOrder.get(1)));
+//            Date date = Date.from(instant);
+            orders.add(new Order(new Pizza(thisOrder.get(0)), thisOrder.get(1)));
             logger.info("-------------------" + orders.size());
 
         }

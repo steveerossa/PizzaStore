@@ -1,6 +1,8 @@
 package com.pizza.store.entity;
 
+import java.time.Instant;
 import java.util.Date;
+
 /**Order class class representing each order.*/
 // @SuppressWarnings("unused")
 public class Order {
@@ -9,14 +11,20 @@ public class Order {
     private Pizza pizza;
 
     /**Time order placed.*/
-    private Date orderTime;
+    private String orderTime;
+
+
 
     /**Order constructor.
      * @param pizza the pizza orders
      * @param orderTime time order placed*/
-    public Order(Pizza pizza, Date orderTime) {
+    public Order(Pizza pizza, String orderTime) {
         this.pizza = pizza;
         this.orderTime = orderTime;
+    }
+
+    public Order() {
+
     }
 
     /**Method returns pizza ordered.
@@ -31,11 +39,12 @@ public class Order {
 
     /**Method returns time order placed.
      * @return orderTime*/
-    public Date getOrderTime() {
+    public String getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(Date orderTime) {
+    public void setOrderTime(String orderTime) {
+
         this.orderTime = orderTime;
     }
 
@@ -46,4 +55,16 @@ public class Order {
                 ", orderTime=" + getOrderTime() +
                 '}';
     }
+
+    public String getPizzaName() {
+
+        return this.getPizza().getPizzaName().toLowerCase();
+    }
+
+    public Date orderDate() {
+        Instant instant = Instant.ofEpochMilli(Long.valueOf(orderTime));
+        Date date = Date.from(instant);
+        return date;
+    }
+
 }

@@ -1,10 +1,10 @@
 Order		time
-meatMeaT		Sat Jan 17 1970 5:31:35 PM
-VegVeg		Sat Jan 17 1970 5:31:35 PM
-bread		Sat Jan 17 1970 5:37:20 PM
-bread		Sat Jan 17 1970 6:20:32 PM
-Pizza		Sat Jan 17 1970 6:21:59 PM
-Bread		Sat Jan 17 1970 6:23:25 PM
-p1zza		Sat Jan 17 1970 6:24:51 PM
-pizza		Sat Jan 17 1970 6:26:18 PM
-Meat		Sun Jan 18 1970 2:22:56 AM
+Bread		Sat Jan 17 20:23:25 CST 1970
+bread		Sat Jan 17 20:20:32 CST 1970
+bread		Sat Jan 17 19:37:20 CST 1970
+Meat		Sun Jan 18 04:22:56 CST 1970
+meatMeaT		Sat Jan 17 19:31:35 CST 1970
+p1zza		Sat Jan 17 20:24:51 CST 1970
+pizza		Sat Jan 17 20:26:18 CST 1970
+Pizza		Sat Jan 17 20:21:59 CST 1970
+VegVeg		Sat Jan 17 19:31:35 CST 1970
