@@ -11,4 +11,5 @@ java -jar demo-1.jar. This will run program and start server.
 http://localhost:8080/getorders to see all orders on file.
 http://localhost:8080/saveorder to order pizza. USE POSTMAN and POST METHOD!
 <div>Running Tests:</div>
+Build project using Maven.
 <div>Type <em>mvn clean install</em> Then type <em>mvn test</em></div>
