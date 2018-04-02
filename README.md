@@ -8,5 +8,5 @@ Created Spring REST API and added ability to order Pizza through the API.
 <strong>RUNNING INSTRUCTIONS</strong>
 <div>To run jar navigate to main folder then type:</div>
 java -jar demo-1.jar. This will run program and start server.
-Running Tests:
+<div>Running Tests:</div>
 <div>Type <em>mvn clean install</em> Then type <em>mvn test</em></div>
