@@ -6,7 +6,7 @@ I Assumed every order had only one pizza.
 Created Spring REST API and added ability to order Pizza through the API. 
 
 <strong>RUNNING INSTRUCTIONS</strong>
-To run jar type:
+<div>To run jar type:</div>
 java -jar demo-1.jar. This will run program and start server.
 Running Tests:
-Type <em>mvn clean install</em> Then type <em>mvn test</em>
+<div>Type <em>mvn clean install</em> Then type <em>mvn test</em></div>
