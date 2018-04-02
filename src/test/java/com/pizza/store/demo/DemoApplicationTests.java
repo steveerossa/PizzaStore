@@ -98,7 +98,7 @@ public class DemoApplicationTests {
 
         for (int x = 0; x < orders.size() - 1; x++) {
             for (int y = x + 1; y < orders.size(); y++) {
-                logger.info("The X IS: " + x + " and Y is: " + y);
+
                 if (!orders.get(x).getOrderTime().equals(orders.get(y).getOrderTime())) {
                     assertTrue("Higher index element of list has lower date than lower index element",
                             orders.get(x).orderDate().before(orders.get(y).orderDate()));

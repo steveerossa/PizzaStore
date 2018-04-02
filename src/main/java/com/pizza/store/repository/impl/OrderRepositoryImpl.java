@@ -8,34 +8,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class OrderRepositoryImpl implements OrderRepository {
     private static final Logger LOG = LoggerFactory.getLogger(OrderRepositoryImpl.class);
-    private PizzaOrderUtility utility = new PizzaOrderUtility();
+    private static List<String> ordersString = new ArrayList<>();
+    private final PizzaOrderUtility utility = new PizzaOrderUtility();
 
     @Override
     public List<Order> getOrders() {
 
-        List<String> ordersString = utility.readOrderFiles();
+        ordersString = utility.readOrderFiles();
         return this.utility.ordersList(ordersString);
     }
 
     @Override
     public void saveOrder(Order order) {
         LOG.info("--------------------------------------------------------------");
-        List<String> ordersString = utility.readOrderFiles();
+        ordersString = utility.readOrderFiles();
         if (order != null) {
-
-            ordersString.add( order.getPizzaName()+ "\t\t" + order.getOrderTime());
+             this.utility.saveOrderToFile(order);
         }
-        List<Order> orderList = this.utility.ordersList(ordersString);
-
-        LOG.debug("{}", orderList);
-        utility.writeOrders(orderList);
-
-
 
     }
 }

@@ -39,7 +39,7 @@ public class PizzaOrderUtility  {
         String fileName = "order.txt";
 
         // This will reference one line at a time
-        String line;//  = null;
+        String line;
 
         try {
             // FileReader reads text files in the default encoding.
@@ -115,12 +115,29 @@ public class PizzaOrderUtility  {
         PrintWriter writer = new PrintWriter(new FileWriter(outPutFile));
         writer.println("Order\t\ttime");
         for (Order order: sortedOrders) {
-            //SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd yyyy h:mm:ss a");
-            //String formattedDate = formatter.format(order.getOrderTime());
+
             writer.println(order.getPizza().getPizzaName() + "\t\t" + order.getOrderTime());
         }
 
         writer.close();
+    }
+
+    public void saveOrderToFile(Order order) {
+        String fileName = "order.txt";
+
+
+        try ( PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))) {
+        // printWriter.println();
+        printWriter.println(order.getPizza().getPizzaName() + "\t\t" + order.getOrderTime());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
     }
 
 
