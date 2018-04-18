@@ -13,7 +13,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -68,8 +67,8 @@ public class PizzaOrderUtility  {
             logger.debug(
                     "Error reading file '"
                             + fileName + "'");
-            // Or we could just do this:
-            // ex.printStackTrace();
+
+
         }
 
 
@@ -127,11 +126,10 @@ public class PizzaOrderUtility  {
 
 
         try ( PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))) {
-        // printWriter.println();
-        printWriter.println(order.getPizza().getPizzaName() + "\t\t" + order.getOrderTime());
+         printWriter.println(order.getPizza().getPizzaName() + "\t\t" + order.getOrderTime());
 
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.debug(e.getMessage());
         }
 
 
