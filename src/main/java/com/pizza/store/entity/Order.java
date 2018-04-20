@@ -1,5 +1,7 @@
 package com.pizza.store.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.Instant;
 import java.util.Date;
 
@@ -61,10 +63,10 @@ public class Order {
         return this.getPizza().getPizzaName().toLowerCase();
     }
 
-    public Date orderDate() {
+    @JsonIgnore
+    public Date getOrderDate() {
         Instant instant = Instant.ofEpochMilli(Long.valueOf(orderTime));
-        Date date = Date.from(instant);
-        return date;
+        return Date.from(instant);
     }
 
 }
