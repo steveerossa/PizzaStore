@@ -5,7 +5,7 @@ Used Spring Style design pattern. Used Maven
   To run jar navigate to main folder then type <br>
   <strong>java -jar pizzastore.jar yourfileName.txt. </strong> <br>
   This will run program and start server.
-  Output will be written to text file you provided
+  Output will be written to text file you provided as second argument
 
 
 Entity classes are Pizza and Order which could later be made into Hibernate @Entity classes that correspond with Tables in a 
