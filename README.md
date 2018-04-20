@@ -1,9 +1,9 @@
 
 Used Spring Style design pattern. Used Maven 
 
-<strong>RUNNING INSTRUCTIONS</strong>
-  To run jar navigate to main folder then type
-  <strong>java -jar pizzastore.jar yourfileName.txt. </strong>
+<strong>RUNNING INSTRUCTIONS</strong><br>
+  To run jar navigate to main folder then type <br>
+  <strong>java -jar pizzastore.jar yourfileName.txt. </strong> <br>
   This will run program and start server.
   Output will be written to text file you provided
 
