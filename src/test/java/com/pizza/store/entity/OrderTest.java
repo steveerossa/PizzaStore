@@ -68,15 +68,15 @@ public class OrderTest {
     }
 
     @Test
-    public void orderDate() {
+    public void testOrderDate() {
         Order order = new Order(new Pizza("xx"), orderTime);
         Instant instant = Instant.ofEpochMilli(Long.valueOf(orderTime));
         Date date = Date.from(instant);
-        assertEquals(date, order.orderDate());
+        assertEquals(date, order.getOrderDate());
     }
 
     @Test
-    public void testTotring() {
+    public void testToString() {
         String string = "Order{pizza=Cheese, orderTime=1477405487}";
         assertEquals(string, order.toString());
     }

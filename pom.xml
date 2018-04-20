@@ -69,39 +69,51 @@
 
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<attachClasses>true</attachClasses>
+				</configuration>
+			</plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>com.pizza.store.demo.DemoApplication</mainClass>
+                    <arguments>
+                        <argument>arg1</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+		</plugins>
+
+	</build>
+
 	<!--<build>-->
 		<!--<plugins>-->
 			<!--<plugin>-->
-				<!--<groupId>org.springframework.boot</groupId>-->
-				<!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-			<!--</plugin>-->
-			<!--<plugin>-->
 				<!--<groupId>org.apache.maven.plugins</groupId>-->
-				<!--<artifactId>maven-war-plugin</artifactId>-->
-				<!--<version>3.0.0</version>-->
+				<!--<artifactId>maven-jar-plugin</artifactId>-->
 				<!--<configuration>-->
-					<!--<attachClasses>true</attachClasses>-->
+					<!--<archive>-->
+						<!--<manifest>-->
+							<!--<addClasspath>true</addClasspath>-->
+							<!--<mainClass>com.pizza.store.demo.DemoApplication</mainClass>-->
+						<!--</manifest>-->
+					<!--</archive>-->
 				<!--</configuration>-->
 			<!--</plugin>-->
 		<!--</plugins>-->
 	<!--</build>-->
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<mainClass>com.pizza.store.demo.DemoApplication</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
 
 </project>

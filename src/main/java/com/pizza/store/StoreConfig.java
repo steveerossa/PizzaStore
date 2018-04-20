@@ -9,6 +9,7 @@ public class StoreConfig {
 
     @Bean
     public RestTemplate restTemplate() {
+
         return new RestTemplate();
     }
 

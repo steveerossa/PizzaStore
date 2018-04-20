@@ -2,7 +2,6 @@ package com.pizza.store.service;
 
 import com.pizza.store.entity.Order;
 import com.pizza.store.repository.OrderRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +19,9 @@ public class OrderService {
     }
 
 
-    public List<Order> getOrders() {
+    public List<Order> getAllOrders() {
 
-        return orderRepository.getOrders();
+        return orderRepository.getAllOrders();
     }
 
 

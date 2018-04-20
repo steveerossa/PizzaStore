@@ -31,17 +31,17 @@ public class OrderControllerTest {
 
     @Test
     public void getOrders() {
-        assertNotNull(orderService.getOrders());
-        assertEquals(orderService.getOrders().size(), repository.getOrders().size());
+        assertNotNull(orderService.getAllOrders());
+        assertEquals(orderService.getAllOrders().size(), repository.getAllOrders().size());
 
     }
 
     @Test
     @DirtiesContext
     public void saveOrder() {
-        int beforeSaveSize = orderController.getOrders().size();
+        int beforeSaveSize = orderController.getAllOrders().size();
         orderController.saveOrder(new Order(new Pizza("XX"), "1232"));
-        int afterSaveSize = orderController.getOrders().size();
+        int afterSaveSize = orderController.getAllOrders().size();
         assertEquals(beforeSaveSize + 1, afterSaveSize);
     }
 }
